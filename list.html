@@ -1,125 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyAnimeList Custom CSS Preview</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyAnimeList Custom Style Preview</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- Custom Banner -->
-    <div id="list-header">
-        <h1 id="list-title">My Anime List</h1>
+  <!-- Banner Header -->
+  <div id="list-header">
+    <h1 id="list-title">My Anime List</h1>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div id="list-nav">
+    <div class="nav-item active">Watching</div>
+    <div class="nav-item">Completed</div>
+    <div class="nav-item">On-Hold</div>
+    <div class="nav-item">Dropped</div>
+    <div class="nav-item">Plan to Watch</div>
+  </div>
+
+  <!-- Entry Grid -->
+  <div class="list-table">
+    <div class="list-item">
+      <div class="data image">
+        <img src="https://alternativemovieposters.com/wp-content/uploads/2015/04/saramaese_howl700.jpg" alt="Anime Cover">
+      </div>
+      <div class="data">
+        <div class="title">Death Note</div>
+        <span class="score">Score: 9</span><br>
+        <span class="type">Type: TV</span><br>
+        <span class="tags">Tags: Psychological, Thriller</span>
+      </div>
+      <div class="progress">Ep: 15/37</div>
     </div>
 
-    <!-- Navigation Bar -->
-    <div id="list-nav">
-        <div class="nav-item active">Watching</div>
-        <div class="nav-item">Completed</div>
-        <div class="nav-item">On-Hold</div>
-        <div class="nav-item">Dropped</div>
-        <div class="nav-item">Plan to Watch</div>
-    </div>
+    <!-- Duplicate as needed for more entries -->
 
-    <!-- List Container -->
-    <div id="list-container">
-        <!-- Sample Anime Entry -->
-        <div class="list-table">
-            <div class="list-item-1">
-                <div class="data image">
-                    <img src="https://alternativemovieposters.com/wp-content/uploads/2018/07/raf2.jpg" alt="Anime Cover">
-                </div>
-                <div class="data">
-                    <p class="title">Sample Anime Title</p>
-                    <p class="score">Score: 8.5</p>
-                    <p class="type">Type: TV</p>
-                    <p class="tags">Genres: Action, Drama</p>
-                </div>
-                <div class="progress">Ep: 10/12</div>
-            </div>
-
-            <div class="list-item-2">
-                <div class="data image">
-                    <img src="https://alternativemovieposters.com/wp-content/uploads/2024/06/Alex-Hovey_MovigCastle.jpg" alt="Anime Cover">
-                </div>
-                <div class="data">
-                    <p class="title">Sample Anime Title</p>
-                    <p class="score">Score: 8.5</p>
-                    <p class="type">Type: TV</p>
-                    <p class="tags">Genres: Action, Drama</p>
-                </div>
-                <div class="progress">Ep: 10/12</div>
-            </div>
-
-            <div class="list-item-3">
-                <div class="data image">
-                    <img src="https://placehold.co/150x220" alt="Anime Cover">
-                </div>
-                <div class="data">
-                    <p class="title">Sample Anime Title</p>
-                    <p class="score">Score: 8.5</p>
-                    <p class="type">Type: TV</p>
-                    <p class="tags">Genres: Action, Drama</p>
-                </div>
-                <div class="progress">Ep: 10/12</div>
-            </div>
-
-            <div class="list-item-4">
-                <div class="data image">
-                    <img src="https://placehold.co/150x220" alt="Anime Cover">
-                </div>
-                <div class="data">
-                    <p class="title">Sample Anime Title</p>
-                    <p class="score">Score: 8.5</p>
-                    <p class="type">Type: TV</p>
-                    <p class="tags">Genres: Action, Drama</p>
-                </div>
-                <div class="progress">Ep: 10/12</div>
-            </div>
-
-            <div class="list-item-5">
-                <div class="data image">
-                    <img src="https://placehold.co/150x220" alt="Anime Cover">
-                </div>
-                <div class="data">
-                    <p class="title">Sample Anime Title</p>
-                    <p class="score">Score: 8.5</p>
-                    <p class="type">Type: TV</p>
-                    <p class="tags">Genres: Action, Drama</p>
-                </div>
-                <div class="progress">Ep: 10/12</div>
-            </div>
-
-            <div class="list-item-6">
-                <div class="data image">
-                    <img src="https://placehold.co/150x220" alt="Anime Cover">
-                </div>
-                <div class="data">
-                    <p class="title">Sample Anime Title</p>
-                    <p class="score">Score: 8.5</p>
-                    <p class="type">Type: TV</p>
-                    <p class="tags">Genres: Action, Drama</p>
-                </div>
-                <div class="progress">Ep: 10/12</div>
-            </div>
-
-            <div class="list-item-7">
-                <div class="data image">
-                    <img src="https://placehold.co/150x220" alt="Anime Cover">
-                </div>
-                <div class="data">
-                    <p class="title">Sample Anime Title</p>
-                    <p class="score">Score: 8.5</p>
-                    <p class="type">Type: TV</p>
-                    <p class="tags">Genres: Action, Drama</p>
-                </div>
-                <div class="progress">Ep: 10/12</div>
-            </div>
-
-            <!-- Duplicate the above entry for more test cases -->
+    <div class="list-item">
+        <div class="data image">
+            <img src="https://alternativemovieposters.com/wp-content/uploads/2018/07/raf2.jpg" alt="Anime Cover">
         </div>
+        <div class="data">
+            <p class="title">Sample Anime Title</p>
+            <p class="score">Score: 8.5</p>
+            <p class="type">Type: TV</p>
+            <p class="tags">Genres: Action, Drama</p>
+        </div>
+        <div class="progress">Ep: 10/12</div>
     </div>
+
+    <div class="list-item">
+        <div class="data image">
+            <img src="https://alternativemovieposters.com/wp-content/uploads/2024/06/Alex-Hovey_MovigCastle.jpg" alt="Anime Cover">
+        </div>
+        <div class="data">
+            <p class="title">Sample Anime Title</p>
+            <p class="score">Score: 8.5</p>
+            <p class="type">Type: TV</p>
+            <p class="tags">Genres: Action, Drama</p>
+        </div>
+        <div class="progress">Ep: 10/12</div>
+    </div>
+
+    <div class="list-item">
+        <div class="data image">
+            <img src="https://placehold.co/150x220" alt="Anime Cover">
+        </div>
+        <div class="data">
+            <p class="title">Sample Anime Title</p>
+            <p class="score">Score: 8.5</p>
+            <p class="type">Type: TV</p>
+            <p class="tags">Genres: Action, Drama</p>
+        </div>
+        <div class="progress">Ep: 10/12</div>
+    </div>
+  </div>
 
 </body>
 </html>

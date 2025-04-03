@@ -1,11 +1,13 @@
-/* "Moonlight Archive"
+/* 
+ * "Moonlight Archive"
  * Design by nightjasmine
+ * 
  */
 
 
-/* ================== */
-/* General Page Style */
-/* ================== */
+/* ==================== */
+/*  General Page Style  */
+/* ==================== */
 
  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
  
@@ -35,9 +37,9 @@ body {
     display: none;
 }
 
-/* ==================== */
-/*  HEADER - GIF Banner */
-/* ==================== */
+/* ===================== */
+/*  HEADER - GIF Banner  */
+/* ===================== */
 #list-header {
     background: url('https://i.pinimg.com/originals/57/b9/e5/57b9e5526b70cecc4558a284330e0c1d.gif') no-repeat center center/cover;
     background-size: cover;
@@ -52,54 +54,102 @@ body {
 
 /* Title Styling */
 #list-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
-/* ========================== */
-/* 3. LIST TABLE - ENTRIES */
-/* ========================== */
+/* ================ */
+/*  Navigation Bar  */
+/* ================ */
+#lis-nav {
+    background-color: aliceblue;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 15px;
+    margin: 0 auto 30px auto;
+    padding: 10 px 0;
+}
+
+.nav-item {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6a5acd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(1.1);
+}
+
+.nav-item.active {
+    background: var(--primary-color);
+    color: cadetblue;
+}
+
+/* ============== */
+/*  List Entries  */
+/* ============== */
 
 /* Grid Layout - 5 Entries Per Row */
 .list-table {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
     justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 0 20px;
 }
 
 .list-item {
     width: 19%; /* Ensures 5 items per row */
     position: relative;
     overflow: hidden; /* Prevent image from spilling over, hide the rest */
-    /* transition: transform 0.3s ease-in-out; Smooth transition */
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
 }
 
-/* The image container inside each list item */
-.list-item .data.image {
+/* Hover Effect - Darken Image & Zoom */
+.list-item:hover {
+    transform: scale(1.05); /* zoom in */ 
+}
+
+.list-item:hover .data.image img {
+    filter: brightness(70%);
+}
+
+/* Image Style - container inside each list item */
+.data.image {
     width: 100%;
     height: 220px;             /* Set a fixed height for all images */
     overflow: hidden;          /* Ensures the image won't spill out of the box */
     border-radius: 12px;       /* Rounded edges */
 }
 
-.list-item .data.image img {
+/* Image */
+.data.image img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover; /* No distortion for HD Image */ 
     display: block; /* Removes spacing below image */
     border-radius: 10px; /* Rounded corners */
     transition: filter 0.3s ease; /* Apply transition for smooth hover effect */    
 }
 
-/* Hover Effect - Darken Image & Zoom */
-.list-item:hover img {
-    filter: brightness(70%);
-    transform: scale(1.05); /* zoom in */ 
-}
+/* =================================== */
+/*  HOVER DETAILS - SCORE, TYPE, TAGS  */
+/* =================================== */
 
-/* 3. Styles the metadata container (.data) but EXCLUDES the image container (.data.image) */
+/* Metadata - hidden by default */
+/* Styles the metadata container (.data) but EXCLUDES the image container (.data.image) */
 .list-item .data:not(.image) {
     display: none;            /* Hide metadata by default */
     position: absolute;       /* Position it over the image */
@@ -112,60 +162,14 @@ body {
     z-index: 2;               /* Place above image layer */
 }
 
-/* 4. On hover, show the metadata */
+/* On hover, show the metadata */
 .list-item:hover .data:not(.image) {
     display: block;           /* Reveal metadata when list item is hovered */
 }
 
-/* HD Cover Images
-.list-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; No distortion 
-    border-radius: 10px;  Rounded corners
-    transition: filter 0.3s ease;  Apply transition for smooth hover effect 
-} */
-
-/* .list-item:hover img {
-    transform: scale(1.05); /* zoom in }
-*/
-
-/* Smoother Transitions 
-.list-table .list-item:hover .data {
-    transition: opacity 0.3s ease-in-out;
-} */
-
-/* ========================== */
-/* 4. HOVER DETAILS - SCORE, TYPE, TAGS */
-/* ========================== */
-.list-item .data {
-    /* display: none; */
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-.list-item:hover .data {
-    display: block;
-}
-
-/* Show Score, Type, and Tags on Hover */
-.list-item:hover .data .score,
-.list-item:hover .data .type,
-.list-item:hover .data .tags {
-    display: block;
-    font-size: 14px;
-    opacity: 1;
-}
-
-/* ========================== */
-/* 5. EPISODE/CHAPTER COUNTER */
-/* ========================== */
+/* ==================================== */
+/*  PROGRESS - Episode/Chapter Counter  */
+/* ==================================== */
 .list-item .progress {
     position: absolute;
     bottom: 5px;
@@ -183,50 +187,4 @@ body {
 .list-item .progress:after {
     content: ' + ';
     padding-left: 5px;
-}
-
-/* ========================== */
-/* 6. CUSTOM TYPOGRAPHY & COLORS */
-/* ========================== */
-
-/* Apply Color Scheme */
-/* #list-container {
-    background: var(--background-color);
-    color: var(--text-color);
-}
-
-.list-item:hover {
-    background: var(--primary-color);
-} */
-
-/* ============================== */
-/* 7. BUTTON & NAVIGATION STYLING */
-/* ============================== */
-button {
-    background: var(--primary-color);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 10px;
-    border: none;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background: var(--secondary-color);
-    color: black;
-}
-
-/* Filter Navigation */
-#list-controls {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    border-radius: 10px;
-}
-
-#list-controls select,
-#list-controls input {
-    background: black;
-    color: white;
-    border: 1px solid var(--primary-color);
-    padding: 5px;
 }
