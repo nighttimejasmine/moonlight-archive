@@ -2,11 +2,14 @@
  * Design by nightjasmine
  */
 
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+
 /* ========================== */
 /* 1. GENERAL PAGE STYLING */
 /* ========================== */
 body {
-    background: url('https://i.imgur.com/1CuIqE0.png') no-repeat center center fixed;
+    background: url('https://wallpapers-clan.com/wp-content/uploads/2023/12/moon-purple-clouds-space-desktop-wallpaper-preview.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Poppins', sans-serif;
     color: #ddd;
@@ -28,8 +31,9 @@ body {
 /* 2. HEADER - CUSTOM BANNER */
 /* ========================== */
 #list-header {
-    background: url('https://i.imgur.com/Le8i9YQ.gif') no-repeat center center/cover;
-    height: 250px;
+    background: url('https://i.pinimg.com/originals/57/b9/e5/57b9e5526b70cecc4558a284330e0c1d.gif') no-repeat center center/cover;
+    background-size: cover;
+    height: 350px;
     border-radius: 20px;
     display: flex;
     align-items: center;
