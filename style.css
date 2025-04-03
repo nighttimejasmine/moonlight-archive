@@ -2,12 +2,20 @@
  * Design by nightjasmine
  */
 
+
+/* ================== */
+/* General Page Style */
+/* ================== */
+
  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+ 
+:root {
+    --primary-color: #6a5acd;
+    --secondary-color: #ffcccb;
+    --background-color: #1a1a2e;
+    --text-color: #ffffff;
+}
 
-
-/* ========================== */
-/* 1. GENERAL PAGE STYLING */
-/* ========================== */
 body {
     background: url('https://wallpapers-clan.com/wp-content/uploads/2023/12/moon-purple-clouds-space-desktop-wallpaper-preview.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -27,9 +35,9 @@ body {
     display: none;
 }
 
-/* ========================== */
-/* 2. HEADER - CUSTOM BANNER */
-/* ========================== */
+/* ==================== */
+/*  HEADER - GIF Banner */
+/* ==================== */
 #list-header {
     background: url('https://i.pinimg.com/originals/57/b9/e5/57b9e5526b70cecc4558a284330e0c1d.gif') no-repeat center center/cover;
     background-size: cover;
@@ -64,37 +72,74 @@ body {
 .list-item {
     width: 19%; /* Ensures 5 items per row */
     position: relative;
-    transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* Prevent image from spilling over, hide the rest */
+    /* transition: transform 0.3s ease-in-out; Smooth transition */
 }
 
-/* HD Cover Images */
+/* The image container inside each list item */
+.list-item .data.image {
+    width: 100%;
+    height: 220px;             /* Set a fixed height for all images */
+    overflow: hidden;          /* Ensures the image won't spill out of the box */
+    border-radius: 12px;       /* Rounded edges */
+}
+
 .list-item .data.image img {
     width: 100%;
     height: auto;
-    object-fit: cover;
-    border-radius: 10px; /* Rounded edges */
-    transition: filter 0.3s ease;
+    object-fit: cover; /* No distortion for HD Image */ 
+    display: block; /* Removes spacing below image */
+    border-radius: 10px; /* Rounded corners */
+    transition: filter 0.3s ease; /* Apply transition for smooth hover effect */    
 }
 
-/* Hover Effect - Darken Image */
-.list-item:hover {
-    transform: scale(1.05);
-}
-
-.list-item:hover .data.image img {
+/* Hover Effect - Darken Image & Zoom */
+.list-item:hover img {
     filter: brightness(70%);
+    transform: scale(1.05); /* zoom in */ 
 }
 
-/* Smoother Transitions */ 
+/* 3. Styles the metadata container (.data) but EXCLUDES the image container (.data.image) */
+.list-item .data:not(.image) {
+    display: none;            /* Hide metadata by default */
+    position: absolute;       /* Position it over the image */
+    bottom: 0;                /* Align to bottom of the container */
+    left: 0; right: 0;        /* Stretch across full width */
+    background: rgba(0, 0, 0, 0.85); /* Dark background for readability */
+    padding: 10px;            /* Add space inside the box */
+    color: white;             /* Set text color */
+    border-radius: 0 0 10px 10px; /* Round only the bottom corners */
+    z-index: 2;               /* Place above image layer */
+}
+
+/* 4. On hover, show the metadata */
+.list-item:hover .data:not(.image) {
+    display: block;           /* Reveal metadata when list item is hovered */
+}
+
+/* HD Cover Images
+.list-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; No distortion 
+    border-radius: 10px;  Rounded corners
+    transition: filter 0.3s ease;  Apply transition for smooth hover effect 
+} */
+
+/* .list-item:hover img {
+    transform: scale(1.05); /* zoom in }
+*/
+
+/* Smoother Transitions 
 .list-table .list-item:hover .data {
     transition: opacity 0.3s ease-in-out;
-}
+} */
 
 /* ========================== */
 /* 4. HOVER DETAILS - SCORE, TYPE, TAGS */
 /* ========================== */
 .list-item .data {
-    display: none;
+    /* display: none; */
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
     padding: 10px;
@@ -143,24 +188,16 @@ body {
 /* ========================== */
 /* 6. CUSTOM TYPOGRAPHY & COLORS */
 /* ========================== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
-
-:root {
-    --primary-color: #6a5acd;
-    --secondary-color: #ffcccb;
-    --background-color: #1a1a2e;
-    --text-color: #ffffff;
-}
 
 /* Apply Color Scheme */
-#list-container {
+/* #list-container {
     background: var(--background-color);
     color: var(--text-color);
 }
 
 .list-item:hover {
     background: var(--primary-color);
-}
+} */
 
 /* ============================== */
 /* 7. BUTTON & NAVIGATION STYLING */
