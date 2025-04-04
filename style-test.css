@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #6a5acd;
+  --text-color: #ffffff;
+  /* Background Image */
+  --background: url('https://wallpapers-clan.com/wp-content/uploads/2023/12/moon-purple-clouds-space-desktop-wallpaper-preview.jpg') no-repeat center center fixed;
+  /* Image GIF Banner */
+  --banner: url('https://i.pinimg.com/originals/57/b9/e5/57b9e5526b70cecc4558a284330e0c1d.gif-GIF-BANNER-URL') no-repeat center center/cover;
+}
+
+/* ========== Base Reset ========== */
+body {
+  background: var(--background);
+  background-size: cover;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+}
+
+#mal_control_strip,
+#footer-block,
+.status-menu-container,
+.table-header,
+.category_totals,
+.header-title {
+  display: none !important;
+}
+
+/* ========== Container Cleanup ========== */
+#list-container,
+#list_surround,
+#list_container {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* ========== Banner ========== */
+#list-header {
+  background: var(--banner);
+  height: 250px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  margin: 20px auto 10px auto;
+  max-width: 90%;
+}
+
+#list-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* ========== Navigation Bar (Inject HTML) ========== */
+#list-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(20, 20, 20, 0.9);
+  border-radius: 10px;
+  margin: 10px auto 30px auto;
+  padding: 0;
+  width: fit-content;
+}
+
+.nav-item {
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease;
+}
+
+.nav-item + .nav-item {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-item.active {
+  background: var(--primary-color);
+  color: white;
+  border-radius: 10px;
+}
+
+/* ========== Entry Layout ========== */
+.list-table {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* ========== Entry Card ========== */
+.list-item {
+  width: 19% !important;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.list-item:hover {
+  transform: scale(1.03);
+}
+
+/* Cover Image */
+.data.image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.data.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.list-item:hover .data.image img {
+  filter: brightness(70%);
+}
+
+/* Hover Data: Score Only */
+.list-item .data:not(.image) {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 0 0 12px 12px;
+  font-size: 14px;
+  z-index: 2;
+}
+
+.list-item:hover .data:not(.image) {
+  display: block;
+}
+
+/* Hide all but score */
+.list-item .data .score {
+  display: block;
+}
+
+.list-item .data .title,
+.list-item .data .tags,
+.list-item .data .type {
+  display: none !important;
+}
+
+/* ========== Progress Counter ========== */
+.progress {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: opacity 0.3s;
+}
+
+.list-item:hover .progress {
+  opacity: 0;
+  pointer-events: none;
+}
