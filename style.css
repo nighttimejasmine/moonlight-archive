@@ -62,35 +62,50 @@ body {
 /* ================ */
 /*  Navigation Bar  */
 /* ================ */
-#lis-nav {
-    background-color: aliceblue;
+#list-nav {
+    background-color: rgba(240, 248, 255, 0.7);
     width: 80%;
     justify-content: center;
     align-items: center;
     display: flex;
     border-radius: 15px;
-    margin: 0 auto 30px auto;
-    padding: 10 px 0;
+    margin: 20px auto 30px auto;
+    padding: 10px 0;
+    width: fit-content;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+}
+
+#list-nav::-webkit-scrollbar {
+    display: none; /* hide scrollbar on chrome/safari */
 }
 
 .nav-item {
-    padding: 10px 20px;
-    margin: 0 10px;
+    background: transparent;
+    border: none;
     font-size: 16px;
     font-weight: bold;
     color: #6a5acd;
     border-radius: 10px;
     cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 10px;
     transition: background 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+.nav-item + .nav-item {
+    margin-left: 4px;
 }
 
 .nav-item:hover {
-    background: rgba(255, 255, 255, 0.7);
+    /* background: rgba(255, 255, 255, 0.7); */
+    color: cadetblue;
     transform: scale(1.1);
 }
 
 .nav-item.active {
-    background: var(--primary-color);
+    /* background: rgba(173, 74, 120, 0.08); */
     color: cadetblue;
 }
 
