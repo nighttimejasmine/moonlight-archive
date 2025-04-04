@@ -226,6 +226,66 @@ body {
     padding-left: 5px;
 } */
 
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
 
+/* === Reset MAL layout and styling === */
+#list_surround, #list_container, #list-container {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  .table-header, .header-title, .category_totals {
+    display: none !important;
+  }
+  
+  .list-table {
+    table-layout: auto !important;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background: none !important;
+    border: none !important;
+  }
+  
+  .list-item {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    width: 19% !important;
+  }
+  
+  .list-item:hover {
+    transform: scale(1.03) !important;
+  }
+  
+  .list-item .data {
+    display: none !important;
+  }
+  
+  .list-item:hover .data:not(.image) {
+    display: block !important;
+  }
+  
+  .list-item .data .score {
+    display: block !important;
+  }
+  
+  .list-item .data .title,
+  .list-item .data .tags,
+  .list-item .data .type {
+    display: none !important;
+  }
+  
+  /* Force hide old styling containers */
+  #footer-block, #mal_cs_otherlinks, .status-menu-container {
+    display: none !important;
+  }
 
 
