@@ -14,7 +14,7 @@
 :root {
     --primary-color: #6a5acd;
     --secondary-color: #ffcccb;
-    --background-color: #1a1a2e;
+    /* --background-color: #1a1a2e; */
     --text-color: #ffffff;
 }
 
@@ -30,6 +30,9 @@ body {
     max-width: 95%;
     margin: auto;
     padding: 20px;
+    /* Remove container background if present */
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 /* Hide Default MAL Header */
@@ -142,7 +145,7 @@ body {
 }
 
 /* Image Style - container inside each list item */
-.data.image {
+.list-item .data.image {
     width: 100%;
     height: 220px;             /* Set a fixed height for all images */
     overflow: hidden;          /* Ensures the image won't spill out of the box */
@@ -150,7 +153,7 @@ body {
 }
 
 /* Image */
-.data.image img {
+.list-item .data.image img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* No distortion for HD Image */ 
@@ -182,6 +185,19 @@ body {
     display: block;           /* Reveal metadata when list item is hovered */
 }
 
+/* Hide everything except score & title */
+.list-item .data .type,
+.list-item .data .tags {
+  display: none !important;
+}
+
+.list-item .data .score,
+.list-item .data .title {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
 /* ==================================== */
 /*  PROGRESS - Episode/Chapter Counter  */
 /* ==================================== */
@@ -198,8 +214,18 @@ body {
     font-size: 14px;
 }
 
+/* Hide Progress on Hover */
+.list-item:hover .progress {
+    opacity: 0;
+    pointer-events: none;
+}
+
 /* Progress Button */
-.list-item .progress:after {
+/* .list-item .progress:after {
     content: ' + ';
     padding-left: 5px;
-}
+} */
+
+
+
+
