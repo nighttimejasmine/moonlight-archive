@@ -10,6 +10,46 @@
 }
 
 /* ========== Base Reset ========== */
+
+/* Adding a GIF banner above the list */
+body::before {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 350px; /* Adjust height as needed */
+    background-image: url('https://i.pinimg.com/originals/57/b9/e5/57b9e5526b70cecc4558a284330e0c1d.gif');
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    transform: translateX(-50%);
+    top: 20px;
+    left: 50%;
+    z-index: 0;
+}
+
+/* Adding top margin to the main content */
+#list-container {
+    margin-top: 260px; /* Adjust value based on the banner's height */
+    position: relative;
+    margin-top: 270px; /* Push list content below the banner */
+    z-index: 1;
+}
+
+body::after {
+    content: "My Anime List"; /* Custom title */
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+  }
+
 body {
   background: var(--background);
   background-size: cover;
@@ -64,7 +104,7 @@ display: none !important;
 
 /* ========== Banner ========== */
 #list-header {
-  background: var(--banner) !important;
+  /* background: var(--banner) !important; */
   height: 350px;
   border-radius: 20px;
   display: flex;
