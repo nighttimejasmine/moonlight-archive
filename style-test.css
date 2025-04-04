@@ -62,7 +62,7 @@ display: none !important;
 
 /* ========== Banner ========== */
 #list-header {
-  background: var(--banner);
+  background: var(--banner) !important;
   height: 250px;
   border-radius: 20px;
   display: flex;
@@ -161,7 +161,7 @@ display: none !important;
   filter: brightness(70%);
 }
 
-/* Hover Data: Score Only */
+/* Hover Data: Display Score & Title */
 .list-item .data:not(.image) {
   display: none;
   position: absolute;
@@ -179,12 +179,12 @@ display: none !important;
   display: block;
 }
 
-/* Hide all but score */
+/* Hide all but score, & title */
+.list-item .data .title,
 .list-item .data .score {
-  display: block;
+  display: block !important;
 }
 
-.list-item .data .title,
 .list-item .data .tags,
 .list-item .data .type {
   display: none !important;
@@ -202,6 +202,9 @@ display: none !important;
   border-radius: 10px;
   font-size: 14px;
   transition: opacity 0.3s;
+  display: block;
+  z-index: 3;
+
 }
 
 .list-item:hover .progress {
