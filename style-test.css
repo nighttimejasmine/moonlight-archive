@@ -6,7 +6,7 @@
   /* Background Image */
   --background: url('https://wallpapers-clan.com/wp-content/uploads/2023/12/moon-purple-clouds-space-desktop-wallpaper-preview.jpg') no-repeat center center fixed;
   /* Image GIF Banner */
-  --banner: url('https://i.pinimg.com/originals/57/b9/e5/57b9e5526b70cecc4558a284330e0c1d.gif-GIF-BANNER-URL') no-repeat center center/cover;
+  --banner: url('https://i.pinimg.com/originals/57/b9/e5/57b9e5526b70cecc4558a284330e0c1d.gif') no-repeat center center/cover;
 }
 
 /* ========== Base Reset ========== */
@@ -35,6 +35,30 @@ body {
   box-shadow: none !important;
   border: none !important;
 }
+
+/* Hide the list status title (e.g., "All Anime") */
+.list-status-title {
+    display: none !important;
+  }
+  
+/* Hide the stats bar (entry totals, etc.) */
+.list-stats {
+display: none !important;
+}
+  
+/* Hide the filter/search bar */
+#list-container .list-menu-float,
+#advanced-options,
+#search-box,
+#list-options,
+#list-status-options {
+display: none !important;
+}
+
+#list-container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
 
 /* ========== Banner ========== */
 #list-header {
