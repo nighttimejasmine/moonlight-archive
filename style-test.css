@@ -193,11 +193,11 @@ display: none !important;
 }
 
 /* Title link */
-.data .title {
+.list-item .data .title {
     display: block;
   }
   
-.data .title a {
+.list-item .data .title a {
 font-family: 'Poppins', sans-serif;
 font-weight: 600;
 font-size: 15px;
@@ -206,7 +206,7 @@ text-decoration: none;
 transition: color 0.3s ease;
 }
 
-.data .title a:hover {
+.list-item .data .title a:hover {
 color: #ffffff;
 }
 
